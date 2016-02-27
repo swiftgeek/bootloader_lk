@@ -257,11 +257,11 @@ int mdss_hdmi_off(void)
 
 int mdp_dump_config(struct fbcon_config *fb) {
 	fb->base = (void*) readl(MDP_DMA_P_BUF_ADDR);
-	fb->width = readl(MDP_DMA_P_BUF_Y_STRIDE)/3;
+	fb->width = readl(MDP_DMA_P_BUF_Y_STRIDE)/2;
 	fb->height = readl(MDP_DMA_P_SIZE)>>16;
 	fb->stride = fb->width;
-	fb->bpp = 24;
-	fb->format = FB_FORMAT_RGB888;
+	fb->bpp = 16;
+	fb->format = FB_FORMAT_RGB565;
 
 	return NO_ERROR;
 }
