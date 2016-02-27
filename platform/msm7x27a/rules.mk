@@ -1,8 +1,7 @@
 LOCAL_DIR := $(GET_LOCAL_DIR)
 
 ARCH    := arm
-# Cann't use cortex-a5 as its not supported by gcc 4.4.0
-ARM_CPU := cortex-a8
+ARM_CPU := cortex-a5
 CPU     := generic
 
 DEFINES += ARM_CPU_CORE_A5
