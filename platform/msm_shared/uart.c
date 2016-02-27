@@ -204,3 +204,12 @@ int uart_getc(int port, bool wait)
 
 	return urd(UART_RF);
 }
+
+int uart_tstc(int port) {
+/* Don't do anything if UART is not initialized */
+	if (!uart_ready)
+		return -1;
+
+	/* We will be polling RX_READY status bit */
+	return urd(UART_SR & UART_SR_RX_READY);
+}
